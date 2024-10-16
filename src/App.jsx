@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import menu from './assets/menu.png'
+import login from './assets/login.png'
+import sacola from './assets/sacola-de-compras.png'
+import busca from './assets/lupa.png'
 import './App.css'
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
             <div className="flex">
                 <div className="flex">
                     <button type="button">
-                        <img src="" alt="menu"/>
+                        <img src={menu} alt="menu"/>
                     </button>
                     
                 </div>
@@ -20,15 +22,16 @@ function App() {
               <div className="flex grow justify-center">
                 <form>
                   <input className="w-[400px] h-10 bg-white rounded-full" type="text" placeholder="  Buscar"/>
-                  <button className='relative end-8'><img src="" alt="lupa"/></button>
+                  <button className='relative end-11 top-2'>
+                    <img className='w-7' src={busca} alt="lupa"/></button>
                 </form>
               </div>
               <div className="flex grow-0">
                 <a href="#">
-                  <img src="" alt="sacola"/>
+                  <img src={sacola} alt="sacola"/>
                 </a>
                 <a href="#">
-                  <img src="" alt="login"/>
+                  <img src={login} alt="login"/>
                     </a>
                 </div>
             </div>
