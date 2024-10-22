@@ -17,9 +17,9 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className="flex justify-between w-full">
-      <img className='absolute w-full z-0' src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
-      <button className='sticky start-0 z-999' onClick={prevSlide}><img src={Anterior} alt="Anterior" /></button>
+    <div className="relative top-20 flex justify-between w-full h-[300px]">
+      <img className='absolute w-full' src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
+      <button className='sticky start-0' onClick={prevSlide}><img src={Anterior} alt="Anterior" /></button>
       <button className='sticky start-full' onClick={nextSlide}><img src={Proximo} alt="Proximo" /></button>
     </div>
   );

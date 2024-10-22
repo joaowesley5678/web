@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Carousel from './carrossel'
+import Footer from './footer'
 import menu from './assets/menu.png'
 import login from './assets/login.png'
 import sacola from './assets/sacola-de-compras.png'
@@ -38,8 +39,11 @@ function App() {
   ];
 
   return (
-    <>
-      <nav className="bg-[#bdac7f] p-5" id="cabecalho">
+    <div className=''>
+        <div className=''>
+          <Carousel images={images} />
+        </div>
+        <nav className="fixed top-0 w-full bg-[#bdac7f] p-5" id="cabecalho">
             <div className="flex">
                 <div className="flex">
                     <button onClick={menu_suspenso} type="button">
@@ -68,7 +72,7 @@ function App() {
                 </div>
             </div>
         </nav>
-        <div>
+        <div className=''>
           {isOpen && (
             <div>
               <div className='fixed top-0 w-1/4 h-full bg-white dark:bg-slate-800 text-black dark:text-white pl-3' >
@@ -87,10 +91,10 @@ function App() {
             </div>
           )}
         </div>
-        <div>
-          <Carousel images={images} />
+        <div className='mt-60'>
+          <Footer />
         </div>
-    </>
+    </div>
   )
 }
 
