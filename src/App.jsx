@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import Carousel from './carrossel'
 import menu from './assets/menu.png'
 import login from './assets/login.png'
 import sacola from './assets/sacola-de-compras.png'
 import busca from './assets/lupa.png'
 import close from './assets/x.png'
-import claro from './assets/claro.png'
-import escuro from './assets/escuro.png'
+import claro from './assets/sol.png'
+import escuro from './assets/lua.png'
 import './App.css'
 
 function App() {
@@ -30,6 +31,12 @@ function App() {
     setDarkMode(!darkMode);
   };
 
+  const images = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPIoO2w5ak8d6sK-GosQVR1AeRr0aZCLsnQ&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlfqefJhPx0zT4tuC_A3xVD45nrbzzUP9C1g&s",
+    "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg"
+  ];
+
   return (
     <>
       <nav className="bg-[#bdac7f] p-5" id="cabecalho">
@@ -52,16 +59,19 @@ function App() {
                 <a className='me-2 mt-2' href="#">
                   <img src={sacola} alt="sacola"/>
                 </a>
-                <a className='mt-2' href="#">
+                <a className='me-2 mt-2' href="#">
                   <img src={login} alt="login"/>
                     </a>
+                    <button onClick={toggleTheme} className="h-[32px] mt-1 p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded-full">
+                      <img src={darkMode ? escuro : claro} alt={darkMode ? 'claro' : 'escuro'} />
+                    </button>
                 </div>
             </div>
         </nav>
         <div>
           {isOpen && (
             <div>
-              <div className='fixed top-0 w-1/4 h-full bg-white dark:bg-slate-800 pl-3' >
+              <div className='fixed top-0 w-1/4 h-full bg-white dark:bg-slate-800 text-black dark:text-white pl-3' >
                 <button className='sticky start-full me-3 mt-2' onClick={menu_suspenso} type='button'>
                   <img src={close} alt="Fechar" />
                   </button>
@@ -77,9 +87,9 @@ function App() {
             </div>
           )}
         </div>
-        <button onClick={toggleTheme} className="p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded-md">
-          <img src={darkMode ? claro : escuro} alt={darkMode ? 'claro' : 'escuro'} />
-        </button>
+        <div>
+          <Carousel images={images} />
+        </div>
     </>
   )
 }
