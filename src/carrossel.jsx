@@ -1,26 +1,36 @@
-import React, { useState } from 'react';
-import Anterior from './assets/anterior.png'
-import Proximo from './assets/proximo.png'
+import React from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-
-const Carousel = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+const Carousel = ({slidesData}) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1, // Um slide por vez, que conterá 4 divs internas
+    slidesToScroll: 1,
   };
 
   return (
-    <div className="relative top-20 flex justify-between w-full h-[300px]">
-      <img className='absolute w-full' src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
-      <button className='sticky start-0' onClick={prevSlide}><img src={Anterior} alt="Anterior" /></button>
-      <button className='sticky start-full' onClick={nextSlide}><img src={Proximo} alt="Proximo" /></button>
+    <div className=''>
+      <Slider {...settings}>
+        {[0, 4].map((startIndex) => (
+          <div key={startIndex}>
+            <div className='flex justify-center gap-2 md:gap-4 lg:gap-6'>
+              {slidesData.slice(startIndex, startIndex + 4).map((slide, index) => (
+                <div key={index} className="bg-transparent hover:bg-gray-200 dark:hover:bg-gray-900 rounded-md shadow-lg mb-3 p-4 w-1/5">
+                  <div className="mb-4">
+                    <img src={slide.imgSrc} alt={slide.name} lassName="w-full" />
+                  </div>
+                  <div className="text-black dark:text-gray-200 font-bold mb-2">{slide.name}</div>
+                  <div className='text-black dark:text-gray-200'>{slide.preco}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

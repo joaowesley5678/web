@@ -32,16 +32,48 @@ function App() {
     setDarkMode(!darkMode);
   };
 
-  const images = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPIoO2w5ak8d6sK-GosQVR1AeRr0aZCLsnQ&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlfqefJhPx0zT4tuC_A3xVD45nrbzzUP9C1g&s",
-    "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg"
+  const slides = [
+    {
+      imgSrc: "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg",
+      name: "Produto 1",
+      preco: "R$ 0,00",
+    },
+    {
+      imgSrc: "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg",
+      name: "Produto 2",
+      preco: "R$ 0,00",
+    },
+    {
+      imgSrc: "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg",
+      name: "Produto 3",
+      preco: "R$ 0,00",
+    },
+    {
+      imgSrc: "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg",
+      name: "Produto 4",
+      preco: "R$ 0,00",
+    },
+    {
+      imgSrc: "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg",
+      name: "Produto 5",
+      preco: "R$ 0,00",
+    },
+    {
+      imgSrc: "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg",
+      name: "Produto 6",
+      preco: "R$ 0,00",
+    },
   ];
 
   return (
-    <div className=''>
-        <div className=''>
-          <Carousel images={images} />
+    <div className='bg-white dark:bg-gray-800'>
+        <div className='pt-24'>
+          <div className='pb-1'>
+            <div className='mx-10 sm:mx-20 xl:mx-28 w-full border-b'>
+              <h1 className='w-1/6 text-black dark:text-white font-bold text-xl border-b-gray-800 dark:border-b-white border-b-2'>Laçamentos</h1>
+            </div>
+          </div>
+          <Carousel slidesData={slides} />
         </div>
         <nav className="fixed top-0 w-full bg-[#bdac7f] p-5" id="cabecalho">
             <div className="flex">
@@ -75,7 +107,7 @@ function App() {
         <div className=''>
           {isOpen && (
             <div>
-              <div className='fixed top-0 w-1/4 h-full bg-white dark:bg-slate-800 text-black dark:text-white pl-3' >
+              <div className='fixed top-0 w-1/2 sm:w-1/3 xl:w-1/4 h-full bg-white dark:bg-slate-800 text-black dark:text-white pl-3' >
                 <button className='sticky start-full me-3 mt-2' onClick={menu_suspenso} type='button'>
                   <img src={close} alt="Fechar" />
                   </button>
@@ -86,7 +118,7 @@ function App() {
                   <li className='hover:ms-1'><a href="#">Produtos</a></li>
                 </ul>
               </div>
-              <div className='fixed top-0 start-1/4 w-full h-full bg-[#00000017]' onClick={menu_suspenso}></div>
+              <div className='fixed top-0 start-1/2 sm:start-1/3 xl:start-1/4 w-full h-full bg-[#00000017]' onClick={menu_suspenso}></div>
               
             </div>
           )}

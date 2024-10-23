@@ -1,4 +1,6 @@
 import React from "react";
+import Facebook from './assets/facebook.png'
+import Instagram from './assets/instagram.png'
 
 const Footer = () => {
 
@@ -15,10 +17,10 @@ const Footer = () => {
                         <p>Email: cassacoloja@gmail.com</p>
                         <p>Telefone: (85) 99219-6468</p>
                     </div>
-                    <div>
+                    <div className="flex flex-col gap-2">
                         <h2>Redes sociais.</h2>
-                        <p><a href="" target="_blank">Facebook</a></p>
-                        <p><a href="" target="_blank">Instagram</a></p>
+                        <p className="flex justify-center"><a href="" target="_blank"><img src={Facebook} alt="Facebook" /></a></p>
+                        <p className="flex justify-center"><a href="" target="_blank"><img src={Instagram} alt="Instagram" /></a></p>
                     </div>
                 </div>
                 <div className="border-2 border-transparent border-t-white p-2">
