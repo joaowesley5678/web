@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import menu from './assets/menu.png';
+import logo from './assets/cassaco.png'
 import login from './assets/login.png';
 import sacola from './assets/sacola-de-compras.png';
 import buscaEscuro from './assets/lupaescuro.png';
@@ -9,9 +10,9 @@ import closeDark from './assets/xescuro.png';
 import claro from './assets/sol.png';
 import escuro from './assets/lua.png';
 
-const Header = () => {
+const Header = ({ setCurrentContent  }) => {
     const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
 
   const menu_suspenso = () => {
     setIsOpen(!isOpen);
@@ -41,7 +42,7 @@ const Header = () => {
                     </button>
                     
                 </div>
-					<a href="#"><img src="" alt="logo"/></a>
+					  <div className='mt-2 ms-2'><a onClick={() => setCurrentContent('home')} href="#"><img src={logo} alt="logo"/></a></div>
               <div className="flex grow justify-center">
                 <form>
                   <input className="w-[400px] h-10 bg-white dark:bg-gray-800 text-black dark:text-white rounded-full" type="text" placeholder="  Buscar"/>
@@ -72,9 +73,9 @@ const Header = () => {
                   </button>
                 <h1 className='text-xl'>Cassaco Loja</h1>
                 <ul className='border-s-2 border-[#bdac7f] pl-2'>
-                    <li className='hover:ms-1'><a href="#">Início</a></li>
-                    <li className='hover:ms-1'><a href="#">Laçamentos</a></li>
-                    <li className='hover:ms-1'><a href='#'>Produtos</a></li>                  
+                    <li onClick={menu_suspenso} className='cursor-pointer hover:ms-1'><a onClick={() => setCurrentContent('home')}>Início</a></li>
+                    <li className='cursor-pointer hover:ms-1'><a href="#Lancamentos">Laçamentos</a></li>
+                    <li onClick={menu_suspenso} className='cursor-pointer hover:ms-1'><a onClick={() => setCurrentContent('produtos')} >Produtos</a></li>                  
                 </ul>
               </div>
               <div className='fixed top-0 start-1/2 sm:start-1/3 xl:start-1/4 w-full h-full bg-[#00000017]' onClick={menu_suspenso}></div>

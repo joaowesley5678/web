@@ -2,7 +2,7 @@ import React from 'react';
 
 const Produto = () => {
     return (
-        <div className='absolute top w-full bg-white'>
+        <div className='mt-20 w-full h-screen'>
             <h1>Pagina de produto</h1>
         </div>
     );
