@@ -19,13 +19,18 @@ const Carousel = ({slidesData}) => {
           <div key={startIndex}>
             <div className='flex justify-center gap-2 md:gap-4 lg:gap-6'>
               {slidesData.slice(startIndex, startIndex + 4).map((slide, index) => (
-                <div key={index} className="bg-transparent hover:bg-gray-200 dark:hover:bg-gray-900 rounded-md shadow-lg mb-3 p-4 w-1/5">
-                  <div className="mb-4">
-                    <img src={slide.imgSrc} alt={slide.name} lassName="w-full" />
+                  <div key={index} className="bg-transparent hover:bg-gray-200 dark:hover:bg-gray-900 rounded-md shadow-lg mb-3 p-4 w-1/5">
+                    <div className="mb-4 flex justify-center">
+                      <img src={slide.imgSrc} alt={slide.name} lassName="w-full" />
+                    </div>
+                    <div className='grid grid-cols-2'>
+                      <div className="text-black dark:text-gray-200 font-bold mb-2">{slide.name}</div>
+                      <div className='text-right'>
+                        <div className='text-xs line-through text-gray-400 dark:text-gray-500'>{slide.oferta}</div>
+                        <div className='text-black dark:text-gray-200'>{slide.preco}</div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-black dark:text-gray-200 font-bold mb-2">{slide.name}</div>
-                  <div className='text-black dark:text-gray-200'>{slide.preco}</div>
-                </div>
               ))}
             </div>
           </div>

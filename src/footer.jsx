@@ -12,7 +12,7 @@ const Footer = () => {
                         <h2 className="text-center">Sobre nós.</h2>
                         <p>A maior Loja Geek para utilidades caseiras da rede. Com uma grande variedade de produtos de decoração, utensílios de cozinha, produtos de cama, mesa e muito mais.</p>
                     </div>
-                    <div className="border-2 border-transparent border-x-white">
+                    <div className="border-2 border-transparent border-x-white dark:border-x-gray-800">
                         <h2>Contatos.</h2>
                         <p>Email: cassacoloja@gmail.com</p>
                         <p>Telefone: (85) 99219-6468</p>
@@ -23,7 +23,7 @@ const Footer = () => {
                         <p className="flex justify-center"><a href="" target="_blank"><img src={Instagram} alt="Instagram" /></a></p>
                     </div>
                 </div>
-                <div className="border-2 border-transparent border-t-white p-2">
+                <div className="border-2 border-transparent border-t-white p-2 dark:border-t-gray-800">
                     <p>&copy; 2024 Cassaco Geek. Todos os direitos reservados.</p>
                 </div>
             </div>
