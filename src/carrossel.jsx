@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Carousel = ({slidesData,setCurrentContent}) => {
+const Carousel = ({slidesData,setCurrentContent,setIdProduto,}) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -19,7 +19,7 @@ const Carousel = ({slidesData,setCurrentContent}) => {
           <div key={startIndex}>
             <div className='flex justify-center gap-2 md:gap-4 lg:gap-6'>
               {slidesData.slice(startIndex, startIndex + 4).map((slide, index) => (
-                  <div onClick={() => setCurrentContent('produto')} key={index} className="bg-transparent hover:bg-gray-200 dark:hover:bg-gray-900 rounded-md shadow-lg mb-3 p-4 w-1/5">
+                  <div onClick={() => {setCurrentContent('produto');setIdProduto(slide.id)}} key={index} className="bg-transparent hover:bg-gray-200 dark:hover:bg-gray-900 rounded-md shadow-lg mb-3 p-4 w-1/5">
                     <div className="mb-4 flex justify-center">
                       <img src={slide.imgSrc} alt={slide.name} lassName="w-full" />
                     </div>
