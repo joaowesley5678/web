@@ -159,6 +159,8 @@ const Produto = [
         name: "Produto 1",
         oferta: "",
         preco: "R$ 9,90",
+        descricao: "",
+        estoque: 3
     },
     {
         imgSrc: "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg",
@@ -166,6 +168,7 @@ const Produto = [
         name: "Produto 2",
         oferta: "",
         preco: "R$ 9,90",
+        descricao: "",
     },
     {
         imgSrc: "https://sma.ufc.br/wp-content/uploads/2022/07/7-1-300x199.jpg",
@@ -173,6 +176,7 @@ const Produto = [
         name: "Produto 3",
         oferta: "",
         preco: "R$ 9,90",
+        descricao: "",
     },
 ]
 
